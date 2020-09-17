@@ -7,7 +7,8 @@ tasks:
   # install kafka
   - init: >
       wget https://ftp.heanet.ie/mirrors/www.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz && 
-      tar -xvf kafka_2.13-2.6.0.tgz -C kafka && 
+      mkdir kafka &&
+      tar -xvf kafka_2.13-2.6.0.tgz --directory kafka && 
       rm kafka_2.13-2.6.0.tgz
   # setup workspace
     command: > 
