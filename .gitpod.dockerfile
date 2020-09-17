@@ -7,9 +7,6 @@ RUN apt-get update && apt-get install -y \
     && sudo apt-get clean \
     && sudo rm -rf /var/cache/apt/* /var/lib/apt/lists/* /tmp/*
 
-RUN  curl https://ftp.heanet.ie/mirrors/www.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz \
-    && sudo tar -xvf kafka_2.13-2.6.0.tgz
-
 # Local environment variables
 ENV DEVELOPMENT="true"
 ENV IP="0.0.0.0"
