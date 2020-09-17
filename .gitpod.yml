@@ -15,8 +15,8 @@ tasks:
       mkdir -p tmp/zookeeper/ &&
       mkdir -p tmp/kafka-logs/ &&
       echo 'export PATH="$PATH:$GITPOD_REPO_ROOT/kafka_2.13-2.6.0/bin"' >> ~/.bashrc &&
-      echo 'alias zk="sh zookeeper-server-start.sh $GITPOD_REPO_ROOT/kafka_2.13-2.6.0/config/zookeeper.properties"' >> ~/.bashrc &&
-      echo 'alias kk="sh kafka-server-start.sh $GITPOD_REPO_ROOT/kafka_2.13-2.6.0/config/server.properties"' >> ~/.bashrc &&
+      echo 'alias zk="zookeeper-server-start.sh $GITPOD_REPO_ROOT/kafka_2.13-2.6.0/config/zookeeper.properties"' >> ~/.bashrc &&
+      echo 'alias kk="kafka-server-start.sh $GITPOD_REPO_ROOT/kafka_2.13-2.6.0/config/server.properties"' >> ~/.bashrc &&
       source ~/.bashrc
 
 # Ports to expose
