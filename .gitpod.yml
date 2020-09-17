@@ -14,7 +14,7 @@ tasks:
       cd kafka_2.13-2.6.0/ &&
       mkdir -p tmp/zookeeper/ &&
       mkdir -p tmp/kafka-logs/ &&
-      echo 'export PATH="$PATH:/workspace/kafka_2.13-2.6.0/bin"' &&
+      echo 'export PATH="$PATH:$GITPOD_REPO_ROOT/kafka_2.13-2.6.0/bin"' >> ~/.bashrc &&
       echo 'alias zk="sh zookeeper-server-start.sh config/zookeeper.properties"' >> ~/.bashrc &&
       echo 'alias kk="sh kafka-server-start.sh config/server.properties"' >> ~/.bashrc &&
       source ~/.bashrc
