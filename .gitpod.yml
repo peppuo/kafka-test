@@ -13,7 +13,7 @@ tasks:
       echo 'alias pip="pip3"' >> ~/.bashrc &&
       echo 'alias python="python3"' >> ~/.bashrc &&
       source ~/.bashrc &&
-      wget https://ftp.heanet.ie/mirrors/www.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz && tar -xvf kafka_2.13-2.6.0.tgz
+      wget https://ftp.heanet.ie/mirrors/www.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz && tar -xvf kafka_2.13-2.6.0.tgz && rm kafka_2.13-2.6.0.tgz
 
 # Ports to expose
 ports:
