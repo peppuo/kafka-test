@@ -7,15 +7,14 @@ tasks:
   # install kafka
   - init: >
       wget https://ftp.heanet.ie/mirrors/www.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz && 
-      mkdir kafka &&
-      tar -xvf kafka_2.13-2.6.0.tgz --directory kafka && 
+      tar -xvf kafka_2.13-2.6.0.tgz && 
       rm kafka_2.13-2.6.0.tgz
   # setup workspace
     command: > 
-      cd kafka/ &&
+      cd kafka_2.13-2.6.0/ &&
       mkdir -p tmp/zookeeper/ &&
       mkdir -p tmp/kafka-logs/ &&
-      echo 'export PATH="$PATH:/workspace/kafka/bin"' &&
+      echo 'export PATH="$PATH:/workspace/kafka_2.13-2.6.0/bin"' &&
       echo 'alias zk="sh zookeeper-server-start.sh config/zookeeper.properties"' >> ~/.bashrc &&
       echo 'alias kk="sh kafka-server-start.sh config/server.properties"' >> ~/.bashrc &&
       source ~/.bashrc
