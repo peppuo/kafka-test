@@ -4,25 +4,25 @@ image:
 
 # Commands on:
 tasks:
-  # workspace initialization
+  # install kafka
   - init: >
-      pip3 install --upgrade pip &&
-      pip3 install -r requirements.txt
-  # workspace startup  
-    command: > 
-      echo 'alias pip="pip3"' >> ~/.bashrc &&
-      echo 'alias python="python3"' >> ~/.bashrc &&
-      source ~/.bashrc &&
       wget https://ftp.heanet.ie/mirrors/www.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz && 
       tar -xvf kafka_2.13-2.6.0.tgz && 
-      rm kafka_2.13-2.6.0.tgz &&
+      rm kafka_2.13-2.6.0.tgz
+  # setup workspace
+    command: > 
       cd kafka_2.13-2.6.0 &&
       mkdir -p tmp/zookeeper/ &&
-      mkdir -p tmp/kafka-logs/ 
+      mkdir -p tmp/kafka-logs/ &&
+      echo 'alias zk="sh bin/zookeeper-server-start.sh config/zookeeper.properties"' >> ~/.bashrc &&
+      echo 'alias kk="sh bin/kafka-server-start.sh config/server.properties"' >> ~/.bashrc &&
+      source ~/.bashrc
 
 # Ports to expose
 ports:
   - port: 8080
+  - port: 2181
+  - port: 9092
 
 # Install vscode extensions
 vscode:
